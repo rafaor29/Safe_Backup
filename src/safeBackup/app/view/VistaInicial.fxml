@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="safeBackup.app.view.VistaInicialController">
+   <bottom>
+      <HBox alignment="CENTER_RIGHT" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="V2.1" />
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="5.0" right="10.0" top="5.0" />
+         </BorderPane.margin>
+      </HBox>
+   </bottom>
+   <center>
+      <VBox alignment="CENTER" prefHeight="142.0" prefWidth="750.0" spacing="30.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="192.0" fitWidth="261.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/logo-min.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btn_configuracion" alignment="BASELINE_LEFT" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleConfiguracionClicked" prefHeight="40.0" prefWidth="260.0" text="Configuración">
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/ajustes.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="btn_subir_archivos" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleSubirArchivosClicked" prefHeight="40.0" prefWidth="260.0" text="Subir archivos cifrados" textAlignment="JUSTIFY">
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/subir.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="btn_descargar_archivos" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="35.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleDescargarArchivosClicked" prefHeight="40.0" prefWidth="260.0" text="Descargar archivos cifrados">
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/descargar.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

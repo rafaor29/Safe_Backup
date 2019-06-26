@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="safeBackup.app.view.VistaEditarArchivosCompartidosController">
+   <children>
+      <VBox layoutX="125.0" prefHeight="500.0" prefWidth="750.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox>
+               <children>
+                  <Button fx:id="btn_inicio" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleInicio" prefHeight="36.0" prefWidth="100.0" style="-fx-background-color: none;" text="Inicio">
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/inicio.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Separator orientation="VERTICAL" />
+                  <Button fx:id="btn_ir_subir" layoutX="10.0" layoutY="10.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleSubir" prefWidth="150.0" style="-fx-background-color: none;" text="Subir archivos">
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/subir.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Separator orientation="VERTICAL" />
+                  <Button fx:id="btn_ir_descargas" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleDescargar" prefWidth="160.0" style="-fx-background-color: none;" text="Descargar archivos">
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/descargar.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Region prefHeight="36.0" prefWidth="62.0" />
+                  <Label text="Editar archivos compartidos">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </HBox>
+            <VBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Separator prefWidth="200.0" />
+                  <Label text="Primero selecciona el archivo que quieres modificar:">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <HBox prefHeight="38.0" prefWidth="685.0" spacing="15.0">
+                     <children>
+                        <Button fx:id="btn_examinar" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleExaminar" prefHeight="32.0" text="Examinar archivos ..." />
+                        <TextField fx:id="text_directorio" minHeight="-Infinity" minWidth="-Infinity" prefHeight="32.0" prefWidth="588.0">
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <Label text="Usuarios con los que compartes el archivo actualmente:">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <ListView fx:id="lista_usuarios" minHeight="-Infinity" minWidth="-Infinity" prefHeight="162.0" prefWidth="720.0">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin></ListView>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="75.0" prefWidth="720.0" spacing="20.0">
+               <children>
+                  <Label text="¿Qué quieres hacer?" textAlignment="CENTER" />
+                  <HBox alignment="CENTER" prefHeight="46.0" prefWidth="720.0" spacing="30.0">
+                     <children>
+                        <Button fx:id="btn_borrar" mnemonicParsing="false" onAction="#handleBorrar" prefHeight="32.0" prefWidth="200.0" text="Eliminar un usuario">
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/menos.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btn_agregar" mnemonicParsing="false" onAction="#handleAgregar" prefHeight="32.0" prefWidth="200.0" text="Añadir un usuario">
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/mas.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox alignment="BOTTOM_RIGHT" prefHeight="54.0" prefWidth="720.0">
+               <children>
+                  <ImageView fitHeight="56.0" fitWidth="177.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/logo-min.png" />
+                     </image>
+                  </ImageView>
+                  <Region prefHeight="56.0" prefWidth="571.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
+</AnchorPane>

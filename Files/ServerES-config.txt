@@ -1,0 +1,6 @@
+//Nombre de usuario
+Angela
+//Ubicacion del directorio de Drive
+D:/Drive/ServidorES/ServidorES
+//Ubicacion d�nde se va a descargar los backups
+D:/Descargas/

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="safeBackup.app.view.VistaConfiguracionController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="63.0" prefWidth="750.0">
+         <children>
+            <Button fx:id="btn_inicio" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleInicio" prefHeight="34.0" prefWidth="122.0" style="-fx-background-color: none;" text="Inicio">
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/inicio.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Region prefHeight="63.0" prefWidth="185.0" />
+            <Label prefHeight="27.0" prefWidth="131.0" text="Configuración">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+            <Region prefHeight="63.0" prefWidth="161.0" />
+            <ImageView fitHeight="40.0" fitWidth="143.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/logo-min.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <Separator layoutX="15.0" layoutY="43.0" prefHeight="2.0" prefWidth="586.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="43.0" />
+      <GridPane layoutX="55.0" layoutY="66.0" prefHeight="414.0" prefWidth="700.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="-5.0" AnchorPane.topAnchor="50.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="154.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="581.0" minWidth="10.0" prefWidth="551.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints vgrow="SOMETIMES" />
+          <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Nombre de usuario:" />
+            <Label text="Directorio de Drive:" GridPane.rowIndex="1">
+               <tooltip>
+                  <Tooltip text="Directorio donde se encuentra tu carperta de Google Drive" />
+               </tooltip></Label>
+            <Label text="Contraseña:" GridPane.rowIndex="3">
+               <tooltip>
+                  <Tooltip text="La contraseña debe tener mínimo 8 caracteres" />
+               </tooltip></Label>
+            <Label prefHeight="21.0" prefWidth="153.0" text="Repite la contraseña:" GridPane.rowIndex="4" />
+            <TextField fx:id="nombre_usuario" prefHeight="32.0" prefWidth="553.0" promptText="ej.: juan" GridPane.columnIndex="1">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
+            <TextField fx:id="directorio_drive" accessibleRole="BUTTON" onMouseClicked="#handleDirectorioDrive" prefHeight="32.0" promptText="ej.: C:/users/juan/Google Drive" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
+            <PasswordField fx:id="contrasenya" prefHeight="32.0" promptText="********" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></PasswordField>
+            <PasswordField fx:id="contrasenya_rep" prefHeight="32.0" prefWidth="400.0" promptText="*******" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></PasswordField>
+            <Label text="Descargas:" GridPane.rowIndex="2">
+               <tooltip>
+                  <Tooltip text="Directorio donde se almacenarán los archivos desencriptados" />
+               </tooltip></Label>
+            <TextField fx:id="directorio_descargas" onMouseClicked="#handleDirectorioDescargas" promptText="ej.: C:/users/juan/Descargas" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+      <HBox alignment="CENTER" layoutY="428.0" prefHeight="72.0" prefWidth="750.0" spacing="57.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="408.0">
+         <children>
+            <Button fx:id="btn_config" minWidth="150.0" mnemonicParsing="false" onAction="#handleConfigurar" prefHeight="35.0" prefWidth="190.0" text="Configurar">
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/config.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</AnchorPane>
